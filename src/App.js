@@ -1,12 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
 import LoginForm from "./components/LoginForm";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <LoginForm />
-    </div>
+    <Provider store={store}>
+      <Layout />
+    </Provider>
   );
 }
 

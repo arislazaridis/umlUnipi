@@ -3,9 +3,11 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import { Error, ErrorOutlined, ErrorSharp } from "@mui/icons-material";
+import UserForm from "./UserForm";
+import { connect } from "react-redux";
+import { login } from "../store/index";
 
-function LoginForm() {
+function LoginForm(props) {
   const DEFAULT_DATA = {
     administrator: {
       name: "admin",
@@ -19,6 +21,10 @@ function LoginForm() {
 
   const [user, setUser] = useState({ name: "", password: "" });
   const [error, setError] = useState({ errorUser: "", errorAdmin: "" });
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const { loginUser, login } = props;
+  console.log(loginUser);
 
   const handleAdmin = () => {
     if (
@@ -42,6 +48,8 @@ function LoginForm() {
       setError({ ...error, errorUser: "No User" });
     } else {
       console.log("login");
+      setLoggedIn(true);
+      login(true);
       setError("");
     }
   };
@@ -102,8 +110,20 @@ function LoginForm() {
           <em>No User</em>
         </p>
       ) : null}
+      {loggedIn ? <UserForm /> : null}
     </Box>
   );
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => {
+  return {
+    loginUser: state.loginUser,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (Boolean) => dispatch(login(Boolean)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
