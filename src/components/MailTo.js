@@ -9,21 +9,35 @@ function MailTo() {
     <Box className="card">
       <form>
         <h3>Contact Form</h3>
-        <div className="textField">
-          <TextField label="Full Name" />
-        </div>
-        <div className="textField">
-          <TextField label="Email" />
-        </div>
-        <TextareaAutosize
-          maxRows={4}
-          aria-label="maximum height"
-          placeholder="Maximum 4 rows"
-          defaultValue="Text your message.."
-          style={{ width: 200 }}
+
+        <TextField
+          className="textField"
+          fullWidth
+          label="Full Name"
+          margin="normal"
+          required
+        />
+
+        <TextField
+          className="textField"
+          fullWidth
+          margin="normal"
+          required
+          label="Email"
+        />
+
+        <TextField
+          className="textField"
+          fullWidth
+          multiline
+          label="Message"
+          rows="10"
+          margin="normal"
         />
         <div>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" variant="outlined">
+            Submit
+          </Button>
         </div>
       </form>
     </Box>
