@@ -1,0 +1,13 @@
+.form {
+  border: 4px solid black;
+  border-radius: 4px;
+  padding: 16px;
+  width: 400px;
+  height: 500px;
+  text-align: center;
+  background-color: white;
+}
+
+.padding-16 {
+  padding-bottom: 16px;
+}

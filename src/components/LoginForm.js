@@ -54,64 +54,67 @@ function LoginForm(props) {
     }
   };
   return (
-    <Box
-      component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete="off"
-      style={{
-        borderRadius: "8px",
-        width: "400px",
-        margin: "auto",
-        padding: "24px",
-        backgroundColor: "lightblue",
-      }}
-    >
-      <div>
-        <h3>Welcome Unipi </h3>
-        <div>
-          <TextField
-            required
-            id="outlined-required"
-            label="Username"
-            onChange={(e) => setUser({ ...user, name: e.target.value })}
-          />
-        </div>
-        <div>
-          <TextField
-            required
-            id="outlined-disabled"
-            label="Password"
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-          />
-        </div>
-      </div>
-      <Stack
-        spacing={2}
-        direction="row"
-        style={{ width: "50%", margin: "auto", padding: "24px" }}
+    <div className="content">
+      <Box
+        component="form"
+        sx={{
+          "& .MuiTextField-root": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+        style={{
+          borderRadius: "8px",
+          width: "400px",
+          margin: "auto",
+          padding: "24px",
+          backgroundColor: "lightblue",
+        }}
       >
-        <Button onClick={handleAdmin} variant="contained">
-          Administrator
-        </Button>
-        <Button onClick={handleUser} variant="outlined">
-          User
-        </Button>
-      </Stack>
-      {error.errorAdmin ? (
-        <p style={{ color: "red" }}>
-          <em>No credentials</em>
-        </p>
-      ) : null}
-      {error.errorUser ? (
-        <p style={{ color: "red" }}>
-          <em>No User</em>
-        </p>
-      ) : null}
-      {loggedIn ? <UserForm /> : null}
-    </Box>
+        <div style={{ textAlign: "center" }}>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wu3fAh3mkSiWM6n86l7w0ZDufAhx7ovZe-IKzpbaWeldmI1raAf5hUIixB6-_LITKOw&usqp=CAU" />
+          <h3>Welcome Unipi </h3>
+          <div>
+            <TextField
+              required
+              id="outlined-required"
+              label="Username"
+              onChange={(e) => setUser({ ...user, name: e.target.value })}
+            />
+          </div>
+          <div>
+            <TextField
+              required
+              id="outlined-disabled"
+              label="Password"
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+            />
+          </div>
+        </div>
+        <Stack
+          spacing={2}
+          direction="row"
+          style={{ width: "50%", margin: "auto", padding: "24px" }}
+        >
+          <Button onClick={handleAdmin} variant="contained">
+            Administrator
+          </Button>
+          <Button onClick={handleUser} variant="outlined">
+            User
+          </Button>
+        </Stack>
+        {error.errorAdmin ? (
+          <p style={{ color: "red" }}>
+            <em>No credentials</em>
+          </p>
+        ) : null}
+        {error.errorUser ? (
+          <p style={{ color: "red" }}>
+            <em>No User</em>
+          </p>
+        ) : null}
+        {loggedIn ? <UserForm /> : null}
+      </Box>
+    </div>
   );
 }
 

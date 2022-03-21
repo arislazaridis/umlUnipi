@@ -1,0 +1,15 @@
+.card {
+  margin: 0;
+  border: 3px solid black;
+  border-radius: 8px;
+  width: 400px;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+}
+
+.textField {
+  padding: 4px;
+}
