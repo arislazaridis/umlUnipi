@@ -33,9 +33,11 @@ function LoginForm(props) {
     ) {
       console.log("No credentials");
       setError({ ...error, errorAdmin: "No Credentials" });
+      alert("Wrong Credentials");
     } else {
       console.log("login");
       setError("");
+      alert("Welcome Admin");
     }
   };
 
@@ -46,11 +48,13 @@ function LoginForm(props) {
     ) {
       console.log("No User");
       setError({ ...error, errorUser: "No User" });
+      alert("No user..");
     } else {
       console.log("login");
       setLoggedIn(true);
       login(true);
       setError("");
+      alert(`Welcome ${user.name}`);
     }
   };
   return (

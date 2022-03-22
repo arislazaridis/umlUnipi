@@ -1,13 +1,20 @@
-.content {
-  margin: 0;
-  height: 100vh;
-  background-color: rgb(140, 140, 55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+.body {
   background-image: url(https://d3nhtj3o1tvydx.cloudfront.net/filer_public_thumbnails/filer_public/f3/6d/f36d7a5a-2c3a-4c1d-831c-2b8650030ab0/pliroforiki-peiraios.jpg__501x267_q75_crop_subsampling-2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.forum {
+  border: 1px solid white;
+  margin: auto;
+  width: 50%;
+  text-align: center;
 }
