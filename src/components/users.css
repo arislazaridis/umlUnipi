@@ -29,3 +29,22 @@ button {
   color: white;
   font-size: 20px;
 }
+
+th {
+  border: 1px solid white;
+  padding: 16px;
+}
+
+td {
+  border: 1px solid white;
+  padding: 16px;
+  color: rgb(94, 94, 94);
+}
+
+thead {
+  background-color: white;
+}
+
+tbody {
+  background-color: white;
+}

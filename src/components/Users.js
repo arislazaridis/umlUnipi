@@ -51,7 +51,7 @@ function Users() {
 
       {displayUsers ? (
         <div>
-          <table style={{ fontSize: "50px" }}>
+          <table style={{ fontSize: "50px", border: "1px solid white" }}>
             <thead>
               <th>postId</th>
               <th>name</th>
