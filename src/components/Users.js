@@ -17,15 +17,15 @@ const DEFAULT_USERS = [
     name: "Aris",
     surname: "Lazaridis",
     thesis: "compilers",
-    startDate: "0i/06/2022",
+    startDate: "01/06/2022",
     languages: "java",
     framework: "spring",
     grade: 10,
   },
   {
     id: 3,
-    name: "Aris",
-    surname: "Lazaridis",
+    name: "Vikis",
+    surname: "Papadopoulou",
     thesis: "compilers",
     startDate: "09/03/2022",
     languages: "javascript",
@@ -42,6 +42,7 @@ function Users() {
     setDisplay("none");
     setDisplayUsers(true);
   };
+
   return (
     <div className="users">
       <div style={{ display: display }} className="userForm">
@@ -53,10 +54,12 @@ function Users() {
         <div>
           <table style={{ fontSize: "50px", border: "1px solid white" }}>
             <thead>
-              <th>postId</th>
-              <th>name</th>
-              <th>grade</th>
-              <th>languages</th>
+              <th>PostId</th>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>StartDate</th>
+              <th>Grade</th>
+              <th>Languages</th>
             </thead>
             <tbody>
               {users.map((el) => {
@@ -64,13 +67,22 @@ function Users() {
                   <tr>
                     <td>{el.id}</td>
                     <td>{el.name}</td>
-                    <td>{el.grade}</td>
+                    <td>{el.surname}</td>
+                    <td>{el.startDate}</td>
+                    <td style={{ color: "red" }}>{el.grade}</td>
                     <td>{el.languages}</td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
+          <button style={{ margin: "16px", width: "100%" }}>Add Student</button>
+          <button style={{ margin: "16px", width: "100%" }}>
+            Delete Student
+          </button>
+          <button style={{ margin: "16px", width: "100%" }}>
+            Update Student
+          </button>
         </div>
       ) : null}
     </div>

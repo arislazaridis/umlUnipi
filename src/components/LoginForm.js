@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import UserForm from "./UserForm";
 import { connect } from "react-redux";
 import { login } from "../store/index";
+import { loginAdmin } from "../store/index";
+import "./loginForm.css";
 
 function LoginForm(props) {
   const DEFAULT_DATA = {
@@ -23,7 +25,7 @@ function LoginForm(props) {
   const [error, setError] = useState({ errorUser: "", errorAdmin: "" });
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const { loginUser, login } = props;
+  const { loginUser, loginAdmin, login } = props;
   console.log(loginUser);
 
   const handleAdmin = () => {
@@ -36,6 +38,8 @@ function LoginForm(props) {
       alert("Wrong Credentials");
     } else {
       console.log("login");
+      loginAdmin(true);
+      // setLoggedIn(true);
       setError("");
       alert("Welcome Admin");
     }
@@ -125,12 +129,14 @@ function LoginForm(props) {
 const mapStateToProps = (state) => {
   return {
     loginUser: state.loginUser,
+    // loginAdmin: state.loginAdmin,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (Boolean) => dispatch(login(Boolean)),
+    loginAdmin: (Boolean) => dispatch(loginAdmin(Boolean)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
