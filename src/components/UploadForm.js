@@ -1,8 +1,29 @@
 import Button from "@mui/material/Button";
 import "./uploadForm.css";
-import React from "react";
+import React, { useState } from "react";
+
+const uploadData = {
+  surname: "",
+  name: "",
+  title: "",
+  profSurname: "",
+  profName: "",
+  file: "",
+};
 
 function UploadForm() {
+  const [data, setData] = useState([uploadData]);
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+    console.log(data);
+  };
+
+  const handleOnChange = (e) => {
+    setData({ ...data, surname: e.target.value });
+  };
+  console.log(data);
+
   return (
     <div className="form">
       <form className="formContent">
@@ -11,7 +32,12 @@ function UploadForm() {
           <label>*Author</label>
           <div>
             <div>
-              <input className="textfield" type="text" placeholder="Surname" />
+              <input
+                className="textfield"
+                type="text"
+                placeholder="Surname"
+                onChange={(e) => handleOnChange(e)}
+              />
             </div>
             <div>
               <input className="textfield" type="text" placeholder="Name" />
@@ -48,7 +74,9 @@ function UploadForm() {
         />
 
         <div className="padding-16">
-          <Button variant="outlined">Upload</Button>
+          <Button variant="outlined" onClick={(e) => handleUpload(e)}>
+            Upload
+          </Button>
         </div>
       </form>
     </div>
