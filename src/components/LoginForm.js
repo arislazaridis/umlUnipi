@@ -111,12 +111,12 @@ function LoginForm(props) {
           </Button>
         </Stack>
         {error.errorAdmin ? (
-          <p style={{ color: "red" }}>
+          <p style={{ color: "red", textAlign: "center" }}>
             <em>No credentials</em>
           </p>
         ) : null}
         {error.errorUser ? (
-          <p style={{ color: "red" }}>
+          <p style={{ color: "red", textAlign: "center" }}>
             <em>No User</em>
           </p>
         ) : null}
@@ -129,7 +129,6 @@ function LoginForm(props) {
 const mapStateToProps = (state) => {
   return {
     loginUser: state.loginUser,
-    // loginAdmin: state.loginAdmin,
   };
 };
 

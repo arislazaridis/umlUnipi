@@ -21,7 +21,6 @@ function Layout(props) {
       </>
     </div>
   );
-  // return <Users />;
 }
 
 const mapStateToProps = (state) => {
